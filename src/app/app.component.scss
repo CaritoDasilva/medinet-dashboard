@@ -1,0 +1,32 @@
+.navbar{
+    background-color: #4D648D;
+    a, i{
+        color: #ffffff;
+    }
+    i{
+        font-size: 26px;
+    }
+    .input-group-prepend{
+        .input-group-text{
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            background-color: white;
+            border-left: none;
+            height: 38px;
+            i{
+                color: #6b7881;
+                font-size: 20px;
+            }
+        }        
+    }
+    input{
+        border-top-left-radius: 0;
+        border-left: none;
+        border-bottom-left-radius: 0;
+    }
+    .icons-container{
+        display: flex;
+        justify-content: space-around;
+        width: 10%;
+    }
+}
