@@ -1,6 +1,14 @@
 <div class="bg-container container-fluid">
-    <div *ngFor="let data of productivity">
+    <div class="card-container">
+        <div class="col-md-5" *ngFor="let data of classification">
+    
+            <app-data-card [data]="data"></app-data-card>
+        </div>
+        <div class="card col-md-12">
+            <div class="card-body">
+                <h6>TOTAL: {{generalTotal}}</h6>
+            </div>
+        </div>
 
-        <!-- <app-data-card [data]="data"></app-data-card> -->
     </div>
 </div>
