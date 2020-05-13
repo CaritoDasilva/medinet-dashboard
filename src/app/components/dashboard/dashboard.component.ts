@@ -78,7 +78,6 @@ export class DashboardComponent implements OnInit {
   }
 
   getGeneralTotal(total?: number) {
-    console.log(total)
     let newList: any =  this.listByTags.attentionTypeList;
     total ? this.generalTotal = this.generalTotal + total : newList.forEach(list => list.forEach(_list => this.generalTotal = this.generalTotal + _list.total));
     

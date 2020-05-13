@@ -16,7 +16,56 @@
             color: #4D648D;
             padding: 3%;
             border: 1px solid #4D648D;
-    
+        }
+        .fa-chart-pie{
+            cursor: pointer;
+        }
+        .modal-dialog{
+            width: 100%;
+            max-width: initial;
+            .modal-header{
+                h6{
+                    margin: 0 auto;
+                    font-size: 28px;
+                    font-weight: 700;
+                    font-family: 'Roboto', sans-serif;
+                }
+                & .close{
+                    margin: -1rem -1rem auto;
+                }
+            }
+            table{
+                margin-top: 2%;
+                .form-control{
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid;
+                    border-radius: 0;
+                    &:focus{
+                        outline:0px;
+                        box-shadow: none;
+        
+                    }
+                }
+            }
+            .btn-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                button{
+                    color: #4D648D;
+                    border-color: #4D648D;
+                    border-radius: 0;
+                    margin: 2%;
+                }
+                .btn{
+                    font-size: 12px;
+                }
+                .btn-dark{
+                    background-color: #4D648D;
+                    color: #ffffff;
+                }
+            }
         }
     
     }
