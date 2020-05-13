@@ -34,6 +34,37 @@
                     margin: -1rem -1rem auto;
                 }
             }
+            .icons-mobile{
+                display: none;
+                @media (max-width: 768px) {
+                    display: flex;
+                    margin-bottom: 2%;
+                    justify-content: space-around;
+                    .icons{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;   
+                        .fas{
+                            color: #4D648D;
+                            padding: 3%;
+                            border: 1px solid #4D648D;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .input-mobile{
+                display: none;
+                @media (max-width: 768px) {
+                    display: block;
+                }
+            }
+            .input-desktop{
+                display: block;
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
             table{
                 margin-top: 2%;
                 .form-control{
@@ -64,6 +95,9 @@
                 .btn-dark{
                     background-color: #4D648D;
                     color: #ffffff;
+                    @media (max-width: 768px) {
+                        display: none;
+                    }
                 }
             }
         }
