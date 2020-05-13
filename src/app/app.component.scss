@@ -1,5 +1,11 @@
 .navbar{
     background-color: #4D648D;
+    .navbar-brand{
+        img{
+            width: 120px;
+            height: 25px;
+        }
+    }
     a, i{
         color: #ffffff;
     }

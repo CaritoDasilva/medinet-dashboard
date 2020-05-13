@@ -1,17 +1,28 @@
-<div class="card">
+<div class="card" *ngIf="data.length > 0" >
     <div class="card-body">
         <div>
-            <h6>{{data[0].tipo}}</h6>
-            <div *ngIf="data[0].tipo === 'Citas ambulatorias'">
-                <ng-container *ngFor="let prev of prevision">
-                    <h6>{{prev.type}}: {{prev.qty}}</h6>
-                </ng-container>
+            <div class="title-type row justify-content-between">
+                <div class="col-8">
+                    <h6>{{data[0].name}}</h6>
+                </div>
+                <div class="col-3"> 
+                    <i class="fas fa-chart-pie"></i>
+                    <i class="fas fa-list-ul"></i>
+                </div>
             </div>
-            <div *ngIf="data[0].tipo !== 'Citas ambulatorias'">
-                <h6>CANTIDAD: {{qty}}</h6>
-            </div>
-            <div>
-                <h6>TOTAL: {{total}}</h6>
+            <div class="info-productivity-container">
+                <div class="info-productivity" *ngIf="data[0].name === 'Citas ambulatorias'">
+                    <ng-container *ngFor="let prev of prevision">
+                        <h6>{{prev.type}}: <span>{{prev.qty}}</span></h6>
+                    </ng-container>
+                </div>
+                <div class="info-productivity" *ngIf="data[0].name !== 'Citas ambulatorias'">
+                    <h6>CANTIDAD: <span>{{qty}}</span></h6>
+                </div>
+                <div class="info-productivity total">
+                    <h6>TOTAL: <span>{{total}}</span></h6>
+                </div>
+
             </div>
         </div>
     </div>

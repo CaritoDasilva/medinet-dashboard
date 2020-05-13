@@ -9,6 +9,9 @@
         text-align: center;
         color: #4D648D;
         padding: 3% 0;
+        h3{
+            font-family: 'Roboto', sans-serif;
+        }
     }
     .navs-icons-transparent{
         height: 400px;
@@ -40,7 +43,10 @@
                 bottom: 1%;
                 color: #ffffff;
                 font-size: 12px;
-            }       
+            }   
         }
+        .productivity-icon{
+            cursor: pointer;
+        }    
     }
 }

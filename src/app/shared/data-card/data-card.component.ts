@@ -30,26 +30,24 @@ export class DataCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data)
-    this.dataClassification()
+    // console.log(this.data.length)
+    this.data.length > 0 && this.dataClassification()
   }
 
   dataClassification() {
     this.data.forEach(item => {
-
-      item.tipo === 'Citas ambulatorias' ? this.getPrevisonQty(item) : this.getQty(item.cantidad);
+      item.name === 'Citas ambulatorias' ? this.getPrevisonQty(item) : this.getQty(item.qty);
       this.getTotalByType(item.total);
     })
-    console.log(this.prevision)
   }
-
+  
   getPrevisonQty(item) {
     switch (item.prevision) {
       case 'Fonasa':
-          this.fonasaPrevision.qty = this.fonasaPrevision.qty + item.cantidad;
+          this.fonasaPrevision.qty = this.fonasaPrevision.qty + item.qty;
         break;
       case 'Isapre':
-          this.isaprePrevision.qty = this.isaprePrevision.qty + item.cantidad;
+          this.isaprePrevision.qty = this.isaprePrevision.qty + item.qty;
         break;
     }
   }

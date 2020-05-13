@@ -1,12 +1,52 @@
 <div class="bg-container container-fluid">
-    <div class="card-container">
-        <div class="col-md-5" *ngFor="let data of classification">
+    <div class="col-md-8 offset-md-2 title-container">
+        <h6>INFORME DE PRODUCTIVIDAD</h6>
+    </div>
+    <div class="col-md-8 offset-md-2">
+        <div class="row">
+            <form action="" class="col">
+                <div class="form-group col-md-4">
+                    <label for="exampleFormControlSelect1">Sucursal</label>
+                    <select class="form-control" id="exampleFormControlSelect1" (change)="setTags($event.target.value, 'sucursal');">
+                        <option>Todas</option>
+                        <option *ngFor="let branchOffice of branchOffices; index as i">{{branchOffice}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleFormControlSelect1">Período</label>
+                    <select class="form-control" id="exampleFormControlSelect1" (change)="setTags($event.target.value, 'year');">
+                        <option *ngFor="let year of years; index as i" >{{year}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleFormControlSelect1">Mes</label>
+                    <select class="form-control" id="exampleFormControlSelect1" (change)="setTags($event.target.value, 'month')">
+                        <option *ngFor="let month of months; index as i" [value]="month.id">{{month.name}}</option>
+                    </select>
+                </div>            
+            </form>
+            <div class="col btn-container">
+                <div class="row">
+                    <button type="button" class="btn btn-outline col">Enviar por correo</button>
+                    <button type="button" class="btn btn-outline col">Descargar</button>
+
+                </div>
     
-            <app-data-card [data]="data"></app-data-card>
+            </div>
+    
+        </div>
+    </div>
+    <div class="card-container col-md-8 offset-md-2" *ngIf="classification.length > 0">
+        <div class="col-12 col-sm-12 col-md-6" *ngFor="let data of listByTags.attentionTypeList" [ngStyle]="{'display': data.length === 0 && 'none'}">
+            <ng-container >
+                <app-data-card [data]="data"></app-data-card>
+
+            </ng-container>
+            
         </div>
         <div class="card col-md-12">
             <div class="card-body">
-                <h6>TOTAL: {{generalTotal}}</h6>
+                <h6>TOTAL: <span>{{generalTotal}}</span></h6>
             </div>
         </div>
 

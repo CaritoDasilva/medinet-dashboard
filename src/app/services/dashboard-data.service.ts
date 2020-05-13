@@ -6,10 +6,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DashboardDataService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+   }
 
   getData() {
     return this.http.get('https://demo.medinet.cl/api/dashboard/productividad/?format=json');
   }
 
+ 
 }
