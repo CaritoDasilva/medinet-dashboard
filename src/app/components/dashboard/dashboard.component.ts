@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   generalTotal: number;
   months: any[];
   years: number[];
-  branchOffices: any[];
+  branchOffices: string[];
   listByTags: List;
   tags: Tags;
   tagSelected: Tags;

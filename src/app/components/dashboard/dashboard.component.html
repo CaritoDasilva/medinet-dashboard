@@ -1,10 +1,18 @@
 <div class="bg-container container-fluid">
-    <div class="col-md-8 offset-md-2 title-container">
-        <h6>INFORME DE PRODUCTIVIDAD</h6>
+    <div class="col-md-8 offset-md-2 col-sm-12 col-12 title-container"> 
+        <div class="row justify-content-between">
+            <div class="col-sm-6 col-6">
+                <h6>INFORME DE PRODUCTIVIDAD</h6>
+            </div>
+            <div class="icons-mobile col-sm-2 col-2">
+                <i class="fas fa-paper-plane"></i>
+                <i class="fas fa-download"></i>
+            </div>
+        </div>
     </div>
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-8 offset-md-2 desktop-filter">
         <div class="row">
-            <form action="" class="col">
+            <form action="" class="col col-md-6">
                 <div class="form-group col-md-4">
                     <label for="exampleFormControlSelect1">Sucursal</label>
                     <select class="form-control" id="exampleFormControlSelect1" (change)="setTags($event.target.value, 'sucursal');">
@@ -24,16 +32,47 @@
                         <option *ngFor="let month of months; index as i" [value]="month.id">{{month.name}}</option>
                     </select>
                 </div>            
-            </form>
-            <div class="col btn-container">
+            </form>            
+            <div class="col-md-6 col btn-container">
                 <div class="row">
-                    <button type="button" class="btn btn-outline col">Enviar por correo</button>
-                    <button type="button" class="btn btn-outline col">Descargar</button>
-
+                    <button type="button" class="btn btn-outline col col-md-6">Enviar por correo</button>
+                    <button type="button" class="btn btn-outline col col-md-4">Descargar</button>                    
+                </div>                
+            </div>            
+        </div>       
+    </div>
+     <!-- Accordion mobile -->
+     <div class="col-md-8 offset-md-2">
+        <div class="accordion col-sm-12 col-12" id="accordionExample" data-toggle="collapse" data-target="#collapseOne">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <div class="form-group col-md-4">
+                        <label for="exampleFormControlSelect1">Sucursal</label>
+                        <select class="form-control" id="exampleFormControlSelect1" (change)="setTags($event.target.value, 'sucursal');">
+                            <option>Todas</option>
+                            <option *ngFor="let branchOffice of branchOffices; index as i">{{branchOffice}}</option>
+                        </select>
+                    </div>
                 </div>
-    
+            
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="form-group col-md-4">
+                            <label for="exampleFormControlSelect1">Período</label>
+                            <select class="form-control" id="exampleFormControlSelect1" (change)="setTags($event.target.value, 'year');">
+                                <option *ngFor="let year of years; index as i" >{{year}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="exampleFormControlSelect1">Mes</label>
+                            <select class="form-control" id="exampleFormControlSelect1" (change)="setTags($event.target.value, 'month')">
+                                <option *ngFor="let month of months; index as i" [value]="month.id">{{month.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            
             </div>
-    
         </div>
     </div>
     <div class="card-container col-md-8 offset-md-2" *ngIf="classification.length > 0">
